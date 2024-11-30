@@ -24,7 +24,7 @@ databaseChangeLog:
                     unique: true
               - column:
                   name: country
-                  type: varchar(255)
+                  type: varchar(2)
               - column:
                   name: updated_at
                   type: timestamptz
