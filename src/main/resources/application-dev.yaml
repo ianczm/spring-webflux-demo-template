@@ -1,0 +1,5 @@
+app:
+  datasource:
+    db: webflux_demo_db
+    user: webflux_demo_db_username
+    password: webflux_demo_db_password
