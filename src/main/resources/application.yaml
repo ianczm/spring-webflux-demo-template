@@ -1,0 +1,17 @@
+app:
+  datasource:
+    db: ${DB_NAME}
+    user: ${DB_USER}
+    password: ${DB_PASSWORD}
+
+spring:
+  application:
+    name: webflux-onboarding-demo
+  liquibase:
+    url: jdbc:postgresql://localhost:5432/${app.datasource.db}
+    user: ${app.datasource.user}
+    password: ${app.datasource.password}
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5432/${app.datasource.db}
+    username: ${app.datasource.user}
+    password: ${app.datasource.password}
