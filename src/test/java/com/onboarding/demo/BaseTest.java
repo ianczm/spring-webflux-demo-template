@@ -8,7 +8,7 @@ import org.springframework.test.context.ActiveProfiles;
 @Import(TestcontainersConfiguration.class)
 @SpringBootTest
 @ActiveProfiles({"dev"})
-class DemoApplicationTests {
+class BaseTest {
 
 	@Test
 	void contextLoads() {
