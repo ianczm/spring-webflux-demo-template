@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Documentation: https://github.com/logfellow/logstash-logback-encoder -->
+
+<configuration>
+
+    <!-- Properties -->
+
+    <springProperty name="LOG_LEVEL" source="app.log.level" defaultValue="INFO"/>
+
+    <!-- Appender Configuration -->
+
+    <appender name="console_json" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
+            <providers>
+                <timestamp>
+                    <fieldName>timestamp</fieldName>
+                    <timeZone>UTC</timeZone>
+                </timestamp>
+                <logLevel/>
+                <message/>
+                <loggerName>
+                    <shortenedLoggerNameLength>25</shortenedLoggerNameLength>
+                </loggerName>
+                <threadName/>
+                <mdc/>
+                <stackTrace/>
+            </providers>
+        </encoder>
+    </appender>
+
+    <!-- Logger Configuration -->
+
+    <root level="${LOG_LEVEL}">
+        <appender-ref ref="console_json"/>
+    </root>
+
+</configuration>

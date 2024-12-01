@@ -3,6 +3,8 @@ app:
     db: ${DB_NAME}
     user: ${DB_USER}
     password: ${DB_PASSWORD}
+  log:
+    level: ${LOG_LEVEL}
 
 spring:
   application:

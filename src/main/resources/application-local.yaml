@@ -3,3 +3,5 @@ app:
     db: webflux_demo_db
     user: webflux_demo_db_username
     password: webflux_demo_db_password
+  log:
+    level: INFO
