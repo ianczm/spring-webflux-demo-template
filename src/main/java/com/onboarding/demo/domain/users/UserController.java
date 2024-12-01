@@ -13,20 +13,18 @@ import reactor.core.publisher.Mono;
 @RequiredArgsConstructor
 public class UserController {
 
-    private final UserRepository userRepository;
+    private final UserService userService;
 
     @GetMapping
     public Mono<ResponseEntity<List<UserDto>>> findAll() {
-        return userRepository.findAll()
-            .map(UserDto::fromEntity)
+        return userService.findAll()
             .collectList()
             .map(ResponseEntity::ok);
     }
 
     @GetMapping("{userId}")
     public Mono<ResponseEntity<UserDto>> findById(@PathVariable("userId") Long userId) {
-        return userRepository.findById(userId)
-            .map(UserDto::fromEntity)
+        return userService.findById(userId)
             .map(ResponseEntity::ok)
             .defaultIfEmpty(ResponseEntity.notFound().build());
     }
@@ -35,12 +33,9 @@ public class UserController {
     public Mono<ResponseEntity<UserDto>> create(
         @RequestBody
         @Validated
-        UserDto saveUserDto
+        UserDto userDto
     ) {
-        return Mono.just(saveUserDto)
-            .map(UserDto::toEntity)
-            .flatMap(userRepository::save)
-            .map(UserDto::fromEntity)
+        return userService.create(userDto)
             .map(ResponseEntity::ok);
     }
 
@@ -52,18 +47,9 @@ public class UserController {
 
         @RequestBody
         @Validated
-        UserDto updateUserDto
+        UserDto userDto
     ) {
-
-        var updateUserDtoWithId = updateUserDto
-            .toBuilder()
-            .id(userId)
-            .build();
-
-        return Mono.just(updateUserDtoWithId)
-            .map(UserDto::toEntity)
-            .flatMap(userRepository::update)
-            .map(UserDto::fromEntity)
+        return userService.update(userId, userDto)
             .map(ResponseEntity::ok);
     }
 
