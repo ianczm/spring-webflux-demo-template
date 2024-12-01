@@ -1,4 +1,4 @@
-package com.onboarding.demo.exceptions;
+package demo.template.webflux.exceptions;
 
 import org.springframework.http.HttpStatus;
 

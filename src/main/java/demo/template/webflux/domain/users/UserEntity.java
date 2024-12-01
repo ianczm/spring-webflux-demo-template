@@ -1,11 +1,14 @@
-package com.onboarding.demo.domain.users;
+package demo.template.webflux.domain.users;
 
 import jakarta.persistence.GeneratedValue;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import java.time.ZonedDateTime;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;

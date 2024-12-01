@@ -8,7 +8,7 @@ app:
 
 spring:
   application:
-    name: webflux-onboarding-demo
+    name: webflux-demo-template
   liquibase:
     url: jdbc:postgresql://localhost:5432/${app.datasource.db}
     user: ${app.datasource.user}

@@ -1,4 +1,4 @@
-package com.onboarding.demo.config;
+package demo.template.webflux.config;
 
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import org.springframework.boot.autoconfigure.jackson.Jackson2ObjectMapperBuilderCustomizer;

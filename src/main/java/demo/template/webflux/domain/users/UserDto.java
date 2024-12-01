@@ -1,4 +1,4 @@
-package com.onboarding.demo.domain.users;
+package demo.template.webflux.domain.users;
 
 import jakarta.annotation.Nullable;
 import jakarta.validation.constraints.Email;

@@ -1,4 +1,4 @@
-# webflux-onboarding-demo
+# webflux-demo-template
 
 A starter template based on Spring Reactive Web, pre-configured with libraries typically used in Spring projects.
 

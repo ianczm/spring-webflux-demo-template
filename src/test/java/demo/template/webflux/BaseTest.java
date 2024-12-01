@@ -1,4 +1,4 @@
-package com.onboarding.demo;
+package demo.template.webflux;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -10,8 +10,8 @@ import org.springframework.test.context.ActiveProfiles;
 @ActiveProfiles({"dev"})
 class BaseTest {
 
-	@Test
-	void contextLoads() {
-	}
+    @Test
+    void contextLoads() {
+    }
 
 }

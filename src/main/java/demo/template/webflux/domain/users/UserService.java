@@ -1,9 +1,9 @@
-package com.onboarding.demo.domain.users;
+package demo.template.webflux.domain.users;
 
 import static org.springframework.http.HttpStatus.BAD_REQUEST;
 
-import com.onboarding.demo.exceptions.NotFoundRestException;
-import com.onboarding.demo.exceptions.RestException;
+import demo.template.webflux.exceptions.NotFoundRestException;
+import demo.template.webflux.exceptions.RestException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.dao.DuplicateKeyException;
