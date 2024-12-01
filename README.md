@@ -34,6 +34,8 @@ This project aims to showcase some features of a typical Spring project:
 | + Lombok                                        | Simplify boilerplate code like getters and setters.    |
 | * Caching with Caffeine, and other AOP features | Leveraging caching and additional AOP functionalities. |
 | Global Error Handling                           | Map exceptions to JSON with `@ExceptionHandler`        |
+| * Unit Tests                                    | Testing with Reactor, Mockito and AssertJ              |
+| * Integration Tests                             | Stubbing HTTP with Wiremock                            |
 
 ## Resources
 
