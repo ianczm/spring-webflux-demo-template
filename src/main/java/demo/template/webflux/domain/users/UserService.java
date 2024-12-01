@@ -25,6 +25,7 @@ public class UserService {
 
     public Mono<UserDto> findById(Long userId) {
         return userRepository.findById(userId)
+            .switchIfEmpty(Mono.error(new NotFoundRestException("User not found", "User with id: %s does not exist".formatted(userId))))
             .map(UserDto::fromEntity);
     }
 
@@ -33,6 +34,7 @@ public class UserService {
             .map(UserDto::toEntity)
             .flatMap(userRepository::save)
             .onErrorResume(DuplicateKeyException.class, e -> Mono.error(new RestException(BAD_REQUEST, "User creation failed", "The user with email %s already exists".formatted(createUserDto.email()))))
+            .then(userRepository.findByEmail(createUserDto.email()))
             .doOnNext(createduserEntity -> log.info("User created successfully: {}.", createduserEntity))
             .map(UserDto::fromEntity);
     }
@@ -40,7 +42,7 @@ public class UserService {
     public Mono<UserDto> update(Long userId, UserDto updateUserDto) {
 
         var validateUserExistsMono = userRepository.findById(userId)
-            .switchIfEmpty(Mono.error(new NotFoundRestException("User update failed", "User not found with id: %s".formatted(userId))));
+            .switchIfEmpty(Mono.error(new NotFoundRestException("User update failed", "User with id: %s does not exist".formatted(userId))));
 
         return validateUserExistsMono
             .thenReturn(updateUserDto

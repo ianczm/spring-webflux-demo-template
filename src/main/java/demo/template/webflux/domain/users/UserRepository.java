@@ -19,4 +19,6 @@ public interface UserRepository extends R2dbcRepository<UserEntity, Long> {
         RETURNING *
         """)
     Mono<UserEntity> update(UserEntity userEntity);
+
+    Mono<UserEntity> findByEmail(String email);
 }
