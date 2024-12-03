@@ -12,29 +12,16 @@ A starter template based on Spring Reactive Web, pre-configured with libraries t
 
 Note: If you have an IDE like IDEA IntelliJ, you may simply use the Gradle Sync and Application Run configuration.
 
-- First, build your project.
-
-    ```shell
-    ./gradlew build
-    ```
-  
-    Ensure that your project is configured as follows:
+- Ensure that your project is configured as follows:
     - Uses JDK 23
     - Has annotation processing enabled
     - Uses the Spring Profile `local` when running the application locally
 
 
-- Run the tests:
+- Build your project.
 
     ```shell
-    ./gradlew test
-    ```
-
-
-- Run the following command to start the database:
-
-    ```shell
-    docker compose up
+    ./gradlew build
     ```
 
 
@@ -43,7 +30,6 @@ Note: If you have an IDE like IDEA IntelliJ, you may simply use the Gradle Sync 
     ```shell
     ./gradlew bootRun --args='--spring.profiles.active=local'
     ```
-
 
 ## About
 
