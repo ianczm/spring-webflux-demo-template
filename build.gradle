@@ -5,8 +5,8 @@ plugins {
     id 'com.ryandens.javaagent-test' version '0.7.0'
 }
 
-group = 'com.onboarding'
-version = '0.0.1-SNAPSHOT'
+group = 'demo.template'
+version = '0.0.1'
 
 java {
     toolchain {
@@ -26,7 +26,7 @@ repositories {
 }
 
 ext {
-    set('springCloudVersion', "2024.0.0-RC1")
+    set('springCloudVersion', "2024.0.0")
 }
 
 dependencies {

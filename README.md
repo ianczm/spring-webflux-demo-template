@@ -39,4 +39,4 @@ This project aims to showcase some features of a typical Spring project:
 
 ## Resources
 
-- [Spring Initializr link](https://start.spring.io/#!type=gradle-project&language=java&platformVersion=3.4.0&packaging=jar&jvmVersion=23&groupId=com.onboarding&artifactId=demo&name=demo&description=Demo%20project%20for%20Spring%20WebFlux&packageName=com.onboarding.demo&dependencies=webflux,devtools,lombok,docker-compose,configuration-processor,data-r2dbc,liquibase,postgresql,testcontainers,cloud-contract-stub-runner,data-jpa,validation)
+- [Spring Initializr link](https://start.spring.io/#!type=gradle-project&language=java&platformVersion=3.4.0&packaging=jar&jvmVersion=23&groupId=demo.template&artifactId=webflux&name=webflux-demo-template&description=Demo%20project%20for%20Spring%20WebFlux&packageName=demo.template.webflux&dependencies=webflux,devtools,lombok,docker-compose,configuration-processor,data-r2dbc,liquibase,postgresql,testcontainers,cloud-contract-stub-runner,data-jpa,validation)
