@@ -2,34 +2,7 @@
 
 A starter template based on Spring Reactive Web, pre-configured with libraries typically used in Spring projects.
 
-### Requirements
-
-- Java JDK 23
-- Docker and Docker Compose
-- Gradle
-
-### Installation and Running
-
-Note: If you have an IDE like IDEA IntelliJ, you may simply use the Gradle Sync and Application Run configuration.
-
-- Ensure that your project is configured as follows:
-    - Uses JDK 23
-    - Has annotation processing enabled
-    - Uses the Spring Profile `local` when running the application locally
-
-
-- Build your project.
-
-    ```shell
-    ./gradlew build
-    ```
-
-
-- Run the application:
-
-    ```shell
-    ./gradlew bootRun --args='--spring.profiles.active=local'
-    ```
+---
 
 ## About
 
@@ -57,6 +30,44 @@ This project aims to showcase some features of a typical Spring project:
 | Global Error Handling                           | Map exceptions to JSON with `@ExceptionHandler`        |
 | * Unit Tests                                    | Testing with Reactor, Mockito and AssertJ              |
 | * Integration Tests                             | Stubbing HTTP with Wiremock                            |
+
+---
+
+## Setup
+
+### Requirements
+
+- Java JDK 23
+- Docker and Docker Compose
+- Gradle
+
+### Installation and Running
+
+Note: If you have an IDE like IDEA IntelliJ, you may simply use the Gradle Sync and Application Run configuration.
+
+- Ensure that your project is configured as follows:
+    - Uses JDK 23
+    - Has annotation processing enabled
+    - Uses the Spring Profile `local` when running the application locally
+
+
+- Build your project via IntelliJ, or through the command line as shown below:
+
+    ```shell
+    ./gradlew build
+    ```
+
+- Run docker compose to start the database:
+
+    ```shell
+    docker compose up
+    ```
+
+- Run the application locally via IntelliJ, or through the command line as shown below:
+
+    ```shell
+    ./gradlew bootRun --args='--spring.profiles.active=local'
+    ```
 
 ## Resources
 
