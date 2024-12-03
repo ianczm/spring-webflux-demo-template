@@ -14,22 +14,23 @@ It can be used as a playground to test implementation details on a smaller scale
 
 This project aims to showcase some features of a typical Spring project:
 
-| Feature                                         | Description                                            |
-|-------------------------------------------------|--------------------------------------------------------|
-| + Database Migration with Liquibase             | Changelog examples for creating a simple table.        |
-| + Database Access with R2DBC                    | Example repository and controller for Users.           |
-| + Dependency Injection with Spring              | Providing beans for configuration.                     |
-| Serialization and Deserialization with Jackson  | `@RequestBody` and `@Validation` for DTOs.             |
-| + Bean Validation with Jakarta                  | Adding simple Jakarta annotations to DTOs.             |
-| * WebFilters for before/after request actions   | Logging HTTP requests.                                 |
-| Application Configuration                       | Environment variables and Spring profiles.             |
-| * Schedulers                                    | Simple cron jobs.                                      |
-| * Mapping with MapStruct                        | Easy mapping from DTO to Entity.                       |
-| + Lombok                                        | Simplify boilerplate code like getters and setters.    |
-| * Caching with Caffeine, and other AOP features | Leveraging caching and additional AOP functionalities. |
-| Global Error Handling                           | Map exceptions to JSON with `@ExceptionHandler`        |
-| * Unit Tests                                    | Testing with Reactor, Mockito and AssertJ              |
-| * Integration Tests                             | Stubbing HTTP with Wiremock                            |
+| Feature                                         | Description                                             |
+|-------------------------------------------------|---------------------------------------------------------|
+| + Database Migration with Liquibase             | Changelog examples for creating a simple table.         |
+| + Database Access with R2DBC                    | Example repository and controller for Users.            |
+| + Dependency Injection with Spring              | Providing beans for configuration.                      |
+| Serialization and Deserialization with Jackson  | `@RequestBody` and `@Validation` for DTOs.              |
+| + Bean Validation with Jakarta                  | Adding simple Jakarta annotations to DTOs.              |
+| * WebFilters for before/after request actions   | Logging HTTP requests.                                  |
+| Application Configuration                       | Environment variables and Spring profiles.              |
+| * Schedulers                                    | Simple cron jobs.                                       |
+| * Mapping with MapStruct                        | Easy mapping from DTO to Entity.                        |
+| + Lombok                                        | Simplify boilerplate code like getters and setters.     |
+| * Caching with Caffeine, and other AOP features | Leveraging caching and additional AOP functionalities.  |
+| Global Error Handling                           | Map exceptions to JSON with `@ExceptionHandler`         |
+| * Unit Tests                                    | Testing with Reactor, Mockito and AssertJ               |
+| * Integration Tests                             | Stubbing HTTP with Wiremock                             |
+| Aspect-Oriented Programming with AspectJ        | Implementing cross-cutting logging for any method entry |
 
 ---
 
