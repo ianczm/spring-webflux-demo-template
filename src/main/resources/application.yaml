@@ -17,3 +17,8 @@ spring:
     url: r2dbc:postgresql://localhost:5432/${app.datasource.db}
     username: ${app.datasource.user}
     password: ${app.datasource.password}
+  docker:
+    compose:
+      enabled: false
+  devtools:
+    add-properties: false
