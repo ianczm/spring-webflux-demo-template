@@ -7,7 +7,7 @@ import org.springframework.test.context.ActiveProfiles;
 
 @Import(TestcontainersConfiguration.class)
 @SpringBootTest
-@ActiveProfiles({"dev"})
+@ActiveProfiles({"local"})
 class BaseTest {
 
     @Test
