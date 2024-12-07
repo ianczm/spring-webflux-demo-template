@@ -1,0 +1,68 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: 2
+      author: Ian Chong
+      changes:
+
+        - createTable:
+            tableName: transactions
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  constraints:
+                    primaryKey: true
+                  autoIncrement: true
+              - column:
+                  name: amount
+                  type: numeric(13, 4)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: recipient
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: payee
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: type
+                  type: varchar(25)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: status
+                  type: varchar(25)
+                  constraints:
+                    nullable: false
+                  defaultValue: 'PENDING'
+              - column:
+                  name: updated_at
+                  type: timestamptz
+                  constraints:
+                    nullable: false
+                  defaultValueComputed: CURRENT_TIMESTAMP
+              - column:
+                  name: created_at
+                  type: timestamptz
+                  constraints:
+                    nullable: false
+                  defaultValueComputed: CURRENT_TIMESTAMP
+
+        - addForeignKeyConstraint:
+            baseTableName: transactions
+            baseColumnNames: recipient
+            referencedTableName: users
+            referencedColumnNames: id
+            constraintName: fk_transactions_recipient
+
+        - addForeignKeyConstraint:
+            baseTableName: transactions
+            baseColumnNames: payee
+            referencedTableName: users
+            referencedColumnNames: id
+            constraintName: fk_transactions_payee
