@@ -3,7 +3,7 @@ package demo.template.webflux.domain.users;
 import jakarta.persistence.GeneratedValue;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
-import java.time.ZonedDateTime;
+import java.time.Instant;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -36,8 +36,8 @@ public class UserEntity {
     String country;
 
     @Column("updated_at")
-    ZonedDateTime updated_at;
+    Instant updated_at;
 
     @Column("created_at")
-    ZonedDateTime created_at;
+    Instant created_at;
 }
