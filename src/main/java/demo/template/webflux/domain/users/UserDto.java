@@ -26,22 +26,4 @@ public record UserDto(
     String country
 
 ) {
-
-    public static UserDto fromEntity(UserEntity userEntity) {
-        return UserDto.builder()
-            .id(userEntity.id)
-            .name(userEntity.name)
-            .email(userEntity.email)
-            .country(userEntity.country)
-            .build();
-    }
-
-    public static UserEntity toEntity(UserDto userDto) {
-        return UserEntity.builder()
-            .id(userDto.id)
-            .name(userDto.name)
-            .email(userDto.email)
-            .country(userDto.country)
-            .build();
-    }
 }
