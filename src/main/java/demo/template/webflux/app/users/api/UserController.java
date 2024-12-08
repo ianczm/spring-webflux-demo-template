@@ -1,5 +1,7 @@
 package demo.template.webflux.app.users.api;
 
+import static org.springframework.http.HttpStatus.CREATED;
+
 import java.util.List;
 
 import demo.template.webflux.app.users.UserService;
@@ -26,8 +28,7 @@ public class UserController {
     @GetMapping("{userId}")
     public Mono<ResponseEntity<UserDto>> findById(@PathVariable("userId") Long userId) {
         return userService.findById(userId)
-            .map(ResponseEntity::ok)
-            .defaultIfEmpty(ResponseEntity.notFound().build());
+            .map(ResponseEntity::ok);
     }
 
     @PostMapping
@@ -37,7 +38,7 @@ public class UserController {
         UserDto userDto
     ) {
         return userService.create(userDto)
-            .map(ResponseEntity::ok);
+            .map(createdUser -> ResponseEntity.status(CREATED).body(createdUser));
     }
 
     @PutMapping("{userId}")

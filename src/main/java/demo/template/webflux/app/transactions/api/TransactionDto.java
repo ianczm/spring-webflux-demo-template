@@ -27,8 +27,11 @@ public record TransactionDto(
     Long recipientId,
 
     TransactionType type,
+
     TransactionStatus status,
+
     Instant updatedAt,
+
     Instant createdAt
 
 ) {

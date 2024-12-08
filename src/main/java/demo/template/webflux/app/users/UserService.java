@@ -1,5 +1,6 @@
 package demo.template.webflux.app.users;
 
+import static java.lang.Boolean.TRUE;
 import static org.springframework.http.HttpStatus.BAD_REQUEST;
 
 import demo.template.webflux.app.users.api.UserDto;
@@ -45,10 +46,7 @@ public class UserService {
 
     public Mono<UserDto> update(Long userId, UserDto updateUserDto) {
 
-        var validateUserExistsMono = userRepository.findById(userId)
-            .switchIfEmpty(Mono.error(new NotFoundRestException("User update failed", "User with id: %s does not exist".formatted(userId))));
-
-        return validateUserExistsMono
+        return verifyUserExists(userId, "User update failed")
             .thenReturn(updateUserDto
                 .toBuilder()
                 .id(userId)
@@ -57,6 +55,13 @@ public class UserService {
             .flatMap(userRepository::update)
             .doOnNext(updatedUserEntity -> log.info("User updated successfully: {}.", updatedUserEntity))
             .map(userMapper::toDto);
+    }
+
+    public Mono<Void> verifyUserExists(Long userId, String errorMessage) {
+        return userRepository.existsById(userId)
+            .filter(TRUE::equals)
+            .switchIfEmpty(Mono.error(new NotFoundRestException(errorMessage, "User with id: %s does not exist".formatted(userId))))
+            .then();
     }
 
 }

@@ -1,8 +1,6 @@
 package demo.template.webflux.app.users.repository;
 
 import jakarta.persistence.GeneratedValue;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
 import java.time.Instant;
 
 import lombok.AllArgsConstructor;
@@ -27,8 +25,6 @@ public class UserEntity {
     @Column("name")
     String name;
 
-    @Email
-    @NotBlank
     @Column("email")
     String email;
 

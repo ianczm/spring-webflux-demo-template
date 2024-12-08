@@ -4,15 +4,16 @@ import static jakarta.persistence.EnumType.STRING;
 
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
-import jakarta.validation.constraints.NotNull;
 import java.math.BigDecimal;
 import java.time.Instant;
 
+import demo.template.webflux.app.users.repository.UserEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
@@ -28,16 +29,19 @@ public class TransactionEntity {
     private Long id;
 
     @Column("amount")
-    @NotNull
     private BigDecimal amount;
 
     @Column("recipient")
-    @NotNull
-    private Long recipient;
+    private Long recipientId;
+
+    @Transient
+    private UserEntity recipient;
 
     @Column("payee")
-    @NotNull
-    private Long payee;
+    private Long payeeId;
+
+    @Transient
+    private UserEntity payee;
 
     @Column("type")
     @Enumerated(STRING)
@@ -48,10 +52,8 @@ public class TransactionEntity {
     private TransactionStatus status;
 
     @Column("updated_at")
-    @NotNull
     private Instant updatedAt;
 
     @Column("created_at")
-    @NotNull
     private Instant createdAt;
 }

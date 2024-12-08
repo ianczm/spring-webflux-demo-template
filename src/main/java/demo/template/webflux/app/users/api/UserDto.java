@@ -19,9 +19,9 @@ public record UserDto(
     String name,
 
     @Email
+    @NotBlank
     String email,
 
-    @NotBlank
     @Size(min = 2, max = 2)
     String country
 
