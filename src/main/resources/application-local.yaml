@@ -5,3 +5,7 @@ app:
     password: webflux_demo_db_password
   log:
     level: INFO
+
+spring:
+  devtools:
+    add-properties: true
