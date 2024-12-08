@@ -12,7 +12,7 @@ import reactor.core.publisher.Mono;
 @Slf4j
 public class MethodAccessLoggerAspect {
 
-    @Before("execution(* demo.template.webflux.domain..*Controller.*(..))")
+    @Before("execution(* demo.template.webflux.app..*Controller.*(..))")
     public void logControllerInvocation(JoinPoint joinPoint) {
         String methodName = joinPoint.getSignature().toShortString();
         Object[] methodArgs = joinPoint.getArgs();
@@ -20,7 +20,7 @@ public class MethodAccessLoggerAspect {
     }
 
     @AfterReturning(
-        pointcut = "execution(* demo.template.webflux.domain..*Controller.*(..))",
+        pointcut = "execution(* demo.template.webflux.app..*Controller.*(..))",
         returning = "result"
     )
     public void logControllerReturn(JoinPoint joinPoint, Object result) {

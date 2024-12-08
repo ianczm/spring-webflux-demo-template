@@ -1,7 +1,8 @@
-package demo.template.webflux.domain.users;
+package demo.template.webflux.app.users.api;
 
 import static org.mapstruct.ReportingPolicy.IGNORE;
 
+import demo.template.webflux.app.users.repository.UserEntity;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring", unmappedTargetPolicy = IGNORE)

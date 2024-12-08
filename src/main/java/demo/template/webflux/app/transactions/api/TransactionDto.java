@@ -1,4 +1,4 @@
-package demo.template.webflux.domain.transactions;
+package demo.template.webflux.app.transactions.api;
 
 import jakarta.annotation.Nullable;
 import jakarta.validation.constraints.NotNull;
@@ -6,6 +6,8 @@ import java.math.BigDecimal;
 import java.time.Instant;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import demo.template.webflux.app.transactions.repository.TransactionStatus;
+import demo.template.webflux.app.transactions.repository.TransactionType;
 import lombok.Builder;
 
 @Builder(toBuilder = true)

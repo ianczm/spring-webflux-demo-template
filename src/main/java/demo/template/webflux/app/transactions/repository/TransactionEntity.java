@@ -1,4 +1,4 @@
-package demo.template.webflux.domain.transactions;
+package demo.template.webflux.app.transactions.repository;
 
 import static jakarta.persistence.EnumType.STRING;
 

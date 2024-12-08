@@ -1,4 +1,4 @@
-package demo.template.webflux.domain.users;
+package demo.template.webflux.app.users.repository;
 
 import jakarta.persistence.GeneratedValue;
 import jakarta.validation.constraints.Email;

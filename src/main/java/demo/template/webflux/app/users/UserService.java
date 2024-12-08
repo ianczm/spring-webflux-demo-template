@@ -1,7 +1,10 @@
-package demo.template.webflux.domain.users;
+package demo.template.webflux.app.users;
 
 import static org.springframework.http.HttpStatus.BAD_REQUEST;
 
+import demo.template.webflux.app.users.api.UserDto;
+import demo.template.webflux.app.users.api.UserMapper;
+import demo.template.webflux.app.users.repository.UserRepository;
 import demo.template.webflux.exceptions.NotFoundRestException;
 import demo.template.webflux.exceptions.RestException;
 import lombok.RequiredArgsConstructor;

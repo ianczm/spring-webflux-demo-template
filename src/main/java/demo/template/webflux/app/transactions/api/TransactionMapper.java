@@ -1,5 +1,6 @@
-package demo.template.webflux.domain.transactions;
+package demo.template.webflux.app.transactions.api;
 
+import demo.template.webflux.app.transactions.repository.TransactionEntity;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

@@ -1,4 +1,4 @@
-package demo.template.webflux.domain.transactions;
+package demo.template.webflux.app.transactions.repository;
 
 import org.springframework.data.r2dbc.repository.R2dbcRepository;
 import reactor.core.publisher.Flux;

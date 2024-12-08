@@ -1,4 +1,4 @@
-package demo.template.webflux.domain.users;
+package demo.template.webflux.app.users.repository;
 
 import org.springframework.data.r2dbc.repository.Query;
 import org.springframework.data.r2dbc.repository.R2dbcRepository;

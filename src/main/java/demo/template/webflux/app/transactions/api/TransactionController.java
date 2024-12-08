@@ -1,9 +1,10 @@
-package demo.template.webflux.domain.transactions;
+package demo.template.webflux.app.transactions.api;
 
 import static org.springframework.http.HttpStatus.CREATED;
 
 import java.util.List;
 
+import demo.template.webflux.app.transactions.repository.TransactionRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
