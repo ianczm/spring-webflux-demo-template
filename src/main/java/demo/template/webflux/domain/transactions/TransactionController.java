@@ -22,12 +22,8 @@ public class TransactionController {
 
     @PostMapping
     Mono<ResponseEntity<TransactionDto>> create(@RequestBody @Validated TransactionDto transactionDto) {
-
-        log.info("Received request to create transaction: {}", transactionDto);
-
         return Mono.just(transactionDto)
             .map(transactionMapper::toEntity)
-            .doOnNext(entity -> log.info("Transformed to entity before creation: {}", entity))
             .flatMap(transactionRepository::save)
             .flatMap(savedTransaction -> transactionRepository.findById(savedTransaction.getId()))
             .map(transactionMapper::toDto)
