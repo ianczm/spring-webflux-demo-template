@@ -5,6 +5,11 @@ app:
     password: ${DB_PASSWORD}
   log:
     level: ${LOG_LEVEL}
+  feature-flags:
+    controller:
+      balances: true
+      transactions: true
+      users: true
 
 spring:
   application:

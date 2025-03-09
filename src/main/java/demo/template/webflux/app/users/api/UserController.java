@@ -1,10 +1,12 @@
 package demo.template.webflux.app.users.api;
 
+import static demo.template.webflux.aspects.ControllerFeatureFlagType.USERS;
 import static org.springframework.http.HttpStatus.CREATED;
 
 import java.util.List;
 
 import demo.template.webflux.app.users.UserService;
+import demo.template.webflux.aspects.ControllerFeatureFlag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -19,6 +21,7 @@ public class UserController {
     private final UserService userService;
 
     @GetMapping
+    @ControllerFeatureFlag(USERS)
     public Mono<ResponseEntity<List<UserDto>>> findAll() {
         return userService.findAll()
             .collectList()
